@@ -59,3 +59,6 @@
 
 /// Create a typed null global
 #define GLOBAL_DATUM(X, Typepath) GLOBAL_RAW(Typepath/##X); GLOBAL_UNMANAGED(X)
+
+GLOBAL_LIST_EMPTY(dmi_recorder)
+GLOBAL_LIST_EMPTY(dmistate_recorder)
