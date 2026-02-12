@@ -51,6 +51,9 @@
 		if(created_atoms && from_template && ispath(the_type, /atom/movable))//we only want to populate the list with movables
 			created_atoms += A.get_all_contents()
 
+		GLOB.dmi_recorder |= A.icon
+		GLOB.dmistate_recorder |= A.icon_state
+
 	return qdeleted || QDELING(A)
 
 /**

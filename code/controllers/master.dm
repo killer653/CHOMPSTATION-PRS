@@ -453,6 +453,14 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	to_chat(world, span_boldannounce("[msg]"), MESSAGE_TYPE_DEBUG)
 	log_world(msg)
 
+	log_world("ICON INFO START")
+	log_world("Total dmis loaded: [GLOB.dmi_recorder.len]")
+	for(var/dmi_set in GLOB.dmi_recorder)
+		log_world("-[dmi_set]")
+	log_world("Total states loaded: [GLOB.dmistate_recorder.len]")
+	for(var/state_set in GLOB.dmistate_recorder)
+		log_world("-[state_set]")
+	log_world("ICON INFO END")
 
 	if(world.system_type == MS_WINDOWS && CONFIG_GET(flag/toast_notification_on_init) && !length(GLOB.clients))
 		world.shelleo("start /min powershell -ExecutionPolicy Bypass -File tools/initToast/initToast.ps1 -name \"[world.name]\" -icon %CD%\\icons\\virgoicon_16.png -port [world.port]")
